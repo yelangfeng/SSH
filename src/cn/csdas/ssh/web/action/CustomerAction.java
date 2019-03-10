@@ -15,6 +15,7 @@ import javax.servlet.ServletContext;
  * @author yelf
  */
 public class CustomerAction extends ActionSupport implements ModelDriven<Customer> {
+    //模型驱动使用的对象
     private Customer customer = new Customer();
 
     @Override

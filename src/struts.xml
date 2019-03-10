@@ -6,6 +6,9 @@
 <struts>
     <!--配置Action-->
     <package name="ssh1" extends="struts-default" namespace="/">
-        <action name="customer_*" class="cn.csdas.ssh.web.action.CustomerAction" method="{1}"></action>
+        <!--Action自行创建，不使用spring进行管理-->
+        <!--<action name="customer_*" class="cn.csdas.ssh.web.action.CustomerAction" method="{1}"></action>-->
+        <!--Action使用spring进行管理-->
+        <action name="customer_*" method="{1}" class="customerAction"/>
     </package>
 </struts>

@@ -20,8 +20,11 @@
 		<property name="configLocation" value="classpath:hibernate.cfg.xml"/>
 	</bean>
 	
-	<!-- 配置Action=================== -->
-
+	<!-- 配置Action：需要设置为多例模式=================== -->
+	<bean name="customerAction" class="cn.csdas.ssh.web.action.CustomerAction" scope="prototype">
+		<!--注入依赖-->
+		<property name="customerService" ref="customerService"/>
+	</bean>
 	
 	<!-- 配置Service================== -->
 	<bean name="customerService" class="cn.csdas.ssh.service.impl.CustomerServiceImpl"></bean>
