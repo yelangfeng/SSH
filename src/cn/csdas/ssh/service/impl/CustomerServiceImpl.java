@@ -20,5 +20,6 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public void save(Customer customer) {
         System.out.println("service的save方法执行了");
+        customerDao.save(customer);
     }
 }

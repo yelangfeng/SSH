@@ -5,7 +5,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <!-- 建立类与表的映射 -->
-    <class name="cn.csdas.ssh.domain.Customer" table="account">
+    <class name="cn.csdas.ssh.domain.Customer" table="cst_customer">
         <!-- 建立类中的属性与表中的主键对应 -->
         <id name="cust_id" column="cust_id" type="java.lang.Integer">
             <!--主键生成策略-->
