@@ -14,6 +14,7 @@
 	http://www.springframework.org/schema/tx/spring-tx.xsd">
 	
 	<!-- Spring整合Hibernate -->
+
 	<!-- 引入Hibernate的配置的信息=============== -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
 		<!-- 引入hibernate的配置文件 -->
@@ -33,14 +34,16 @@
 	</bean>
 	
 	<!-- 配置DAO====================== -->
-	<bean name="customerDao" class="cn.csdas.ssh.dao.impl.CustomerDaoImpl"></bean>
-
+	<bean name="customerDao" class="cn.csdas.ssh.dao.impl.CustomerDaoImpl">
+		<!--注入sessionFactory,就会创建Hibernate模板-->
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
 	<!-- 配置事务管理器 -->
 	<bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-	
+
 	<!-- 开启注解事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
 </beans>

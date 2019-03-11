@@ -36,7 +36,7 @@
 
 
         <!--导入映射配置文件-->
-
+        <mapping resource="cn/csdas/ssh/domain/Customer.hbm.xml"></mapping>
 
     </session-factory>
 </hibernate-configuration>
