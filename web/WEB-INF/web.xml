@@ -17,9 +17,9 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-    <!--加载spring的配置文件的路径，默认加载/WEB-INF/applicationContext.xml-->
+    <!--加载spring的配置文件的路径，默认加载/WEB-INF/applicationContext_2.xml-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:applicationContext.xml</param-value>
+        <param-value>classpath:applicationContext_1.xml</param-value>
     </context-param>
 </web-app>
