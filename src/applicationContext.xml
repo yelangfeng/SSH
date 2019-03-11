@@ -27,9 +27,13 @@
 	</bean>
 	
 	<!-- 配置Service================== -->
-	<bean name="customerService" class="cn.csdas.ssh.service.impl.CustomerServiceImpl"></bean>
+	<bean name="customerService" class="cn.csdas.ssh.service.impl.CustomerServiceImpl">
+		<!--注入dao对象-->
+		<property name="customerDao" ref="customerDao"/>
+	</bean>
 	
 	<!-- 配置DAO====================== -->
+	<bean name="customerDao" class="cn.csdas.ssh.dao.impl.CustomerDaoImpl"></bean>
 
 
 	<!-- 配置事务管理器 -->

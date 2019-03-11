@@ -1,4 +1,5 @@
 package cn.csdas.ssh.service.impl;
+import cn.csdas.ssh.dao.CustomerDao;
 import cn.csdas.ssh.domain.Customer;
 import cn.csdas.ssh.service.CustomerService;
 
@@ -7,6 +8,12 @@ import cn.csdas.ssh.service.CustomerService;
  * @author yelf
  */
 public class CustomerServiceImpl implements CustomerService {
+    //注入dao
+    private CustomerDao customerDao;
+
+    public void setCustomerDao(CustomerDao customerDao) {
+        this.customerDao = customerDao;
+    }
 
     @Override
     public void save(Customer customer) {
