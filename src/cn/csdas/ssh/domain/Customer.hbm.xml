@@ -35,6 +35,7 @@
         <property name="cust_level" column="cust_level" length="32" type="java.lang.String"/>
         <property name="cust_phone" column="cust_phone" length="32" type="java.lang.String"/>
         <property name="cust_mobile" column="cust_mobile" length="32" type="java.lang.String"/>
-
     </class>
+    <!--预定义查询语句-->
+    <query name="queryAll">from Customer</query>
 </hibernate-mapping>

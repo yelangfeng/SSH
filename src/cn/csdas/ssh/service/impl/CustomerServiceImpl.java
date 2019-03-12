@@ -4,6 +4,8 @@ import cn.csdas.ssh.domain.Customer;
 import cn.csdas.ssh.service.CustomerService;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * 客户管理的业务层实现类
  * @author yelf
@@ -22,4 +24,35 @@ public class CustomerServiceImpl implements CustomerService {
         System.out.println("service的save方法执行了");
         customerDao.save(customer);
     }
+
+    @Override
+    public void delete(Customer customer) {
+        customerDao.delete(customer);
+    }
+
+    @Override
+    public void update(Customer customer) {
+        customerDao.update(customer);
+    }
+
+    @Override
+    public Customer findById(int cust_id) {
+        return customerDao.findById(cust_id);
+    }
+
+    @Override
+    public List<Customer> findByHQL() {
+        return customerDao.findAllByHQL();
+    }
+
+    @Override
+    public List<Customer> findByQBC() {
+        return customerDao.findAllByQBC();
+    }
+
+    @Override
+    public List<Customer> findAllByName() {
+        return customerDao.findAllByName();
+    }
+
 }
