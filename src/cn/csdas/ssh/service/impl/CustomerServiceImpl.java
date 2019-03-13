@@ -10,6 +10,7 @@ import java.util.List;
  * 客户管理的业务层实现类
  * @author yelf
  */
+//业务层开启事物
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
     //注入dao
@@ -37,7 +38,8 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public Customer findById(int cust_id) {
-        return customerDao.findById(cust_id);
+        Customer customer = customerDao.findById(cust_id);
+        return customer;
     }
 
     @Override

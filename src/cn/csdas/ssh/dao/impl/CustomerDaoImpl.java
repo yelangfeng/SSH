@@ -32,7 +32,9 @@ public class CustomerDaoImpl extends HibernateDaoSupport implements CustomerDao 
 
     @Override
     public Customer findById(int cust_id) {
-        Customer customer = this.getHibernateTemplate().get(Customer.class,cust_id);
+        //Customer customer = this.getHibernateTemplate().get(Customer.class,cust_id);
+        //测试延迟加载
+        Customer customer = this.getHibernateTemplate().load(Customer.class,cust_id);
         return customer;
     }
 

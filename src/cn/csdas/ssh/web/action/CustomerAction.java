@@ -39,4 +39,11 @@ public class CustomerAction extends ActionSupport implements ModelDriven<Custome
         System.out.println("Action的save方法执行了");
         return NONE;
     }
+    //测试延时加载
+    public String find(){
+        Customer customer = customerService.findById(3);
+        System.out.println("fing方法执行了");
+        System.out.println(customer);
+        return NONE;
+    }
 }
